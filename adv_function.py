@@ -1,171 +1,171 @@
-# def greet():
-#     print("Hello Students!")
-#     print("Welcome everyone!")
+def greet():
+    print("Hello Students!")
+    print("Welcome everyone!")
 
-# g = greet
-# g() 
-
-
+g = greet
+g() 
 
 
 
-# def addition(num1, num2):
-#     print(num1 + num2)
-
-# a = addition
-# a(19, 38)
-
-# def sub(num1, num2):
-#     print(num1 - num2)
-
-# a = sub 
-# a(43, 8)
-
-# def outer():
-#     def inner():
-#         print("I am inner function")
-#     inner()
 
 
-# outer()
+def addition(num1, num2):
+    print(num1 + num2)
 
-# def calculator():
-#     def addition(num1, num2):
-#         print(num1 + num2)
-#     return addition
+a = addition
+a(19, 38)
+
+def sub(num1, num2):
+    print(num1 - num2)
+
+a = sub 
+a(43, 8)
+
+def outer():
+    def inner():
+        print("I am inner function")
+    inner()
 
 
+outer()
 
-# add = calculator()
-# add(15, 20)
-
-
-# def calculator(operator):
-#     def addition(a,b):
-#         return a + b 
-#     def difference(a,b):
-#         return a - b 
-#     def product(a,b):
-#         return a * b
-#     if operator == "+":
-#         return addition
-#     if operator == "-":
-#         return difference
-#     if operator == "*":
-#         return product
+def calculator():
+    def addition(num1, num2):
+        print(num1 + num2)
+    return addition
 
 
 
-# a = calculator("+")
-# print(a(20, 10))
+add = calculator()
+add(15, 20)
 
-#closure 
+
+def calculator(operator):
+    def addition(a,b):
+        return a + b 
+    def difference(a,b):
+        return a - b 
+    def product(a,b):
+        return a * b
+    if operator == "+":
+        return addition
+    if operator == "-":
+        return difference
+    if operator == "*":
+        return product
+
+
+
+a = calculator("+")
+print(a(20, 10))
+
+closure 
  
-# def increment(num):
-#     def factor(val):
-#         return num + val 
-#     return factor
+def increment(num):
+    def factor(val):
+        return num + val 
+    return factor
 
 
 
-# increase_by = increment(20)
-# print(increase_by(0))
-# print(increase_by(50))
+increase_by = increment(20)
+print(increase_by(0))
+print(increase_by(50))
 
 
-# def welcome(name):
-#     print(f"Welcome {name}")
+def welcome(name):
+    print(f"Welcome {name}")
 
-# def bye_bye(name):
-#     print(f"Bye bye {name}")
+def bye_bye(name):
+    print(f"Bye bye {name}")
 
-# def greet(func):
-#     func("Ram")
+def greet(func):
+    func("Ram")
 
-# greet(bye_bye)
+greet(bye_bye)
 
-# def decorate_function(func):
-#     def wrapper():
-#         print("Hello everyone!")
-#         func()
-#         print("Bye everyone!")
-#     return wrapper
-
-
-# @decorate_function
-# def welcome():
-#     print(f"Welcome everyone!")
+def decorate_function(func):
+    def wrapper():
+        print("Hello everyone!")
+        func()
+        print("Bye everyone!")
+    return wrapper
 
 
-# # w = decorate_function(welcome)
-# # w()
+@decorate_function
+def welcome():
+    print(f"Welcome everyone!")
 
 
-# welcome()
-
-# def smart_division(func):
-#     def wrapper(a, b):
-#         if b == 0:
-#             return "could not divide by zero"
-#         else:
-#             return func(a,b)
-#     return wrapper
-
-# @smart_division
-# def division(a, b):
-#     return a / b
-
-# #print(division)
-# print(division(20, 10))
-# print(division(20, 0))
-
-# import time
-
-# start_time = time.time()
-# total = 0
-# for i in range(1, 1000000001):
-#     total += i 
+# w = decorate_function(welcome)
+# w()
 
 
-# print(total)
-# print(time.time() - start_time)
+welcome()
+
+def smart_division(func):
+    def wrapper(a, b):
+        if b == 0:
+            return "could not divide by zero"
+        else:
+            return func(a,b)
+    return wrapper
+
+@smart_division
+def division(a, b):
+    return a / b
+
+#print(division)
+print(division(20, 10))
+print(division(20, 0))
+
+import time
+
+start_time = time.time()
+total = 0
+for i in range(1, 1000000001):
+    total += i 
 
 
-# import time
+print(total)
+print(time.time() - start_time)
 
-# start_time = time.time()
 
-# def smart(func):
-#     def wrapper(a, b):
-#          if b == 0:
-#              return "could not divide by zero"
-#          else:
-#              return func(a,b)
-#     return wrapper
+import time
 
-# @smart
-# def division(a, b):
-#      return a / b
+start_time = time.time()
 
-#  #print(division)
-# print(division(30, 10))
-# print(division(20, 10))
-# print(time.time() - start_time)
+def smart(func):
+    def wrapper(a, b):
+         if b == 0:
+             return "could not divide by zero"
+         else:
+             return func(a,b)
+    return wrapper
 
-# import time
+@smart
+def division(a, b):
+     return a / b
 
-# def execution_time(fn):
-#     def wrapper():
-#         start_time = time.time()
-#         fn()
-#         print(time.time() - start_time)
-#     return wrapper
+ #print(division)
+print(division(30, 10))
+print(division(20, 10))
+print(time.time() - start_time)
 
-# @execution_time
-# def example():
-#     print("Hello everyone")
+import time
 
-# example()
+def execution_time(fn):
+    def wrapper():
+        start_time = time.time()
+        fn()
+        print(time.time() - start_time)
+    return wrapper
+
+@execution_time
+def example():
+    print("Hello everyone")
+
+example()
    
 
 
